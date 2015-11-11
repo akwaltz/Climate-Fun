@@ -1,35 +1,59 @@
-
-//$("button").click(function() {
-	//$("button").fadeOut("slow");
-//});
+$(document).ready(function(){
+	$("body").hide();
+	$("body").fadeIn("slow");
+});
 
 var click1 = function(){
-	document.getElementById("mainQ").innerHTML = "Why are you concerned?"
+	$('#mainQ').fadeOut('slow', function() {
+		$('#mainQ').replaceWith("<h1 id='mainQ'>" + "Why are you concerned?" + "</h1>");
+		$('#mainQ').fadeIn('slow');
+	});
 	
-	document.getElementById("choice1").innerHTML = "That's what everyone else says."
-	document.getElementById("choice2").innerHTML = "Not sure."
-	document.getElementById("choice3").innerHTML = "The proof is all around us."
+	//$(this.)removeClass(".unselected")
+	
+	$(".unselected").hide();
+	
+	$("#choice1").text("That's what everyone else says.");
+	$("#choice2").text("Not sure.");
+	$("#choice3").text("The proof is all around us.");
+	
+	$(".unselected").fadeIn("slow");
 }
 
 var click2 = function(){
-	document.getElementById("mainQ").innerHTML = "Why are you not concerned?"
-	$("button").fadeIn("slow");
-	document.getElementById("choice1").innerHTML = "The planet has it's phases."
-	document.getElementById("choice2").innerHTML = "Not sure."
-	document.getElementById("choice3").innerHTML = "I don't care."
+	$('#mainQ').fadeOut('slow', function() {
+		$('#mainQ').replaceWith("<h1 id='mainQ'>" + "Why are you not concerned?" + "</h1>");
+		$('#mainQ').fadeIn('slow');
+	});
+	
+	$("#autoResponse").show();
+	$("#autoResponse").text("Really?");
+	
+
+	$("#choice1").text("The planet has it's phases.");
+	$("#choice2").text("Not sure.");
+	$("#choice3").text("I don't care.");
+	
 }
 
 var click3 = function(){
-	document.getElementById("image").src = "images/slap.jpg";
 	$("button").fadeOut("slow");
-	$("#title").hide();
-	$("#mainQ").hide();
+	$("#title").fadeOut("slow");
+	$("#mainQ").fadeOut("slow");
+
+	$("#autoResponse").text("WRONG!!");
+	$("#autoResponse").show();
 	
-	/*  sound effect
-	var snd = new Audio("file.wav"); // buffers automatically when created
-	snd.play();
-	*/
+	/*  sound effects */
+	var slap = new Audio("sounds/Slap.wav"); // buffers automatically when created
 	
-	setTimeout("location.href = 'https://en.wikipedia.org/wiki/Climate_change';",3000);
+	$("#image").delay(1000).queue(function(next) {
+		slap.play();
+	$(this).attr("src", "images/slap.jpg"); next(); });
+	
+
+
+	//redirects to Wiki Climate Change
+	//setTimeout("location.href = 'https://en.wikipedia.org/wiki/Climate_change';",3000);
 }
 

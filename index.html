@@ -11,31 +11,21 @@
   <!-- fonts -->
   <link href='https://fonts.googleapis.com/css?family=Exo|Special+Elite|Jura|Homenaje|Gruppo|Megrim' rel='stylesheet' type='text/css'>
   
-  <!--
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/jquery.easing.min.js"></script>
-  <script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
-  <script type="text/javascript">
-    $(window).load(function() {
-        $('#slider').nivoSlider();
-    });
-	</script>  -->
 </head>
 
 <body>
-	
 	<h1 id="title">Climate Change<h1>
-	
-	
+
 	<img id="image" src="images/rainbow.jpg" />
+	<h1 id="autoResponse"></h1>
 	<h1 id="mainQ">Are you concerned?</h1>
 	<div class="container">
-		<button id="choice1" onclick="click1()">Of course!</button>
-		<button id="choice2" onclick="click2()">Not really.</button>
-		<button id="choice3" onclick="click3()">What's Climate Change?</button>
+		<button id="choice1" onclick="click1()" class="unselected">Of course!</button>
+		<button id="choice2" onclick="click2()" class="unselected">Not really.</button>
+		<button id="choice3" onclick="click3()" class="unselected">What's Climate Change?</button>
 	</div>
 		
-	  <script src="main.js"></script>
+	<script src="main.js"></script>
 </body>
 
 </html>
