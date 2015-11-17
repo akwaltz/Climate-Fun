@@ -12,53 +12,53 @@ $(document).ready(function(){
 	$("body").fadeIn("slow");
 });
 
-
-//1st question
+//1st button clicked
 $("#choice1").click(function() {
+	$(".btnContainer").fadeOut("slow");
+	
 	$("#mainQ").fadeOut("slow", function() {
-		$("#mainQ").replaceWith("<h1 id='mainQ'>" + "Why are you concerned?" + "</h1>");
+		$("#mainQ").replaceWith("<h1 id='mainQ'>" + "Understand and do what you can." + "</h1>");
 		$("#mainQ").fadeIn('slow');
 	});
 	
-	$("#choice1").text("The proof is all around us.");
-	$("#choice2").text("Not sure.");
-	$("#choice3").text("That's what everyone else says.");
+	$("#image").attr("src", "images/tree.jpg");
 	
+	//redirects to infograph
+	//setTimeout("location.href = 'http://www.bloomberg.com/graphics/2015-whats-warming-the-world/?utm_source=The+Weekly+Pique&utm_campaign=cf7d4cd5ac-Episode+12%3A+Global+Warming&utm_medium=email&utm_term=0_4627876a86-cf7d4cd5ac-297062977';",3000);
+
 });
 
-//when the 2nd button is clicked
+//2nd button clicked
 $("#choice2").click(function(){
+	$(".btnContainer").fadeOut("slow");
+	
 	$("#mainQ").fadeOut("slow", function() {
-		$("#mainQ").replaceWith("<h1 id='mainQ'>" + "Why are you not concerned?" + "</h1>");
+		$("#mainQ").replaceWith("<h1 id='mainQ'>" + "If you're not part of the solution, you're part of the problem." + "</h1>");
 		$("#mainQ").fadeIn("slow");
 	});
 	
-	$("#autoResponse").show();
-	$("#autoResponse").text("Really?");
-	
-	$("#choice1").text("The planet has it's phases.");
-	$("#choice2").text("Not sure.");
-	$("#choice3").text("I don't care.");
+	$("#image").attr("src", "images/deniers.jpg");
 	
 });
 
-//when the 3rd button is clicked
+//3rd button clicked
 var click3 = function(){
-	$("button").fadeOut("slow");
-	$("#title").fadeOut("slow");
-	$("#mainQ").fadeOut("slow");
-
-	$("#autoResponse").text("WRONG!!");
-	$("#autoResponse").show();
+	$(".btnContainer").fadeOut("slow");
+	$("#image").hide();
 	
-	/*  sound effect */
-	var slap = new Audio("sounds/Slap.wav"); // buffers automatically when created
+	$("#mainQ").fadeOut("slow", function() {
+		$("#mainQ").replaceWith("<h1 id='mainQ'>" + "NO!" + "</h1>");
+		$("#mainQ").fadeIn("slow");
+	});
 	
+	// sound effect and picture change sync
+	var slap = new Audio("sounds/Slap.wav");
 	$("#image").delay(1000).queue(function(next) {
 		slap.play();
 	$(this).attr("src", "images/slap.jpg"); next(); });
+	$("#image").show();
 	
 	//redirects to Wiki Climate Change
 	//setTimeout("location.href = 'https://en.wikipedia.org/wiki/Climate_change';",3000);
-}
+};
 

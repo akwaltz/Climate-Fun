@@ -5,22 +5,24 @@
 
 	<link rel="stylesheet" type="text/css" href="style.css" />
 	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   
 	<!-- fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Exo|Special+Elite|Jura|Homenaje|Gruppo|Megrim' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-	<h1 id="title">Climate Change<h1>
-
-	<img id="image" src="images/rainbow.jpg" />
-	<h1 id="autoResponse"></h1>
-	<h1 id="mainQ"></h1>
 	<div class="container">
-		<button id="choice1" class="unselected"></button>
-		<button id="choice2" class="unselected"></button>
-		<button id="choice3" onclick="click3()" class="unselected"></button>
+		<h1 id="title">Climate Change<h1>
+	</div>
+
+	<div id="main">
+		<img id="image" src="images/rainbow.jpg" />
+		<h1 id="mainQ"></h1>
+		<div class="btnContainer">
+			<button id="choice1" class="confirm" data-image="tree.jpg"></button>
+			<button id="choice2" class="confirm" data-image="deniers.jpg"></button>
+			<button id="choice3" class="confirm" onclick="click3()" data-image="slap.jpg"></button>
+		</div>
 	</div>
 		
 	<script src="main.js"></script>
